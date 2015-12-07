@@ -400,12 +400,14 @@ pre .chunk {
     <div class="progress-bar"></div>
   </div>
 
-  <div class="slide " id="slide-1">
+  <div class="slide 
+" id="slide-1">
     <section class="slide-content"><h1 id="regexs-and-matching-strings">REGEXS AND MATCHING STRINGS</h1>
 <h2 id="ben-creighton">Ben Creighton</h2>
 </section>
   </div>
-  <div class="slide hidden " id="slide-2">
+  <div class="slide hidden 
+" id="slide-2">
     <section class="slide-content"><h3 id="the-problem">The Problem</h3>
 <h4 id="-lt-r-w-gt-r-is-a-regex-that-generates-w">&lt;R, w&gt; | R is a regex that generates w</h4>
 <p>Very old problem.</p>
@@ -413,7 +415,8 @@ pre .chunk {
 <p>Many more implementations.</p>
 </section>
   </div>
-  <div class="slide hidden " id="slide-3">
+  <div class="slide hidden 
+" id="slide-3">
     <section class="slide-content"><h3 id="my-approach">My Approach</h3>
 <p>Why reinvent the wheel?</p>
 <p>Regex → Postfix Notation → NFA → Simulate NFA</p>
@@ -422,32 +425,37 @@ pre .chunk {
 <p>Used Go.</p>
 </section>
   </div>
-  <div class="slide hidden " id="slide-4">
+  <div class="slide hidden 
+" id="slide-4">
     <section class="slide-content"><h3 id="regex-postfix">Regex → Postfix</h3>
 <p>a(bb)+a == abb.+.a.</p>
 <p>Dijkstra&#39;s shunting-yard algorithm to convert to RPN.</p>
 <p>Makes constructing NFA much easier.</p>
 </section>
   </div>
-  <div class="slide hidden " id="slide-5">
+  <div class="slide hidden 
+" id="slide-5">
     <section class="slide-content"><h3 id="regex-postfix">Regex → Postfix</h3>
 <p><img src="sya1.png" alt="sya1"></p>
 </section>
   </div>
-  <div class="slide hidden " id="slide-6">
+  <div class="slide hidden 
+" id="slide-6">
     <section class="slide-content"><h3 id="regex-postfix">Regex → Postfix</h3>
 <p><img src="sya2.png" alt="sya2"></p>
 <h6 id="by-salix-alba-own-work-cc-by-sa-3-0-via-wikimedia-commons">By Salix alba (Own work) CC BY-SA 3.0, via Wikimedia Commons</h6>
 </section>
   </div>
-  <div class="slide hidden " id="slide-7">
+  <div class="slide hidden 
+" id="slide-7">
     <section class="slide-content"><h3 id="postfix-notation-nfa">Postfix Notation → NFA</h3>
 <p>Graph(ish) structure, made up of State objects.</p>
 <p>Postfix regex is parsed and each State is built based on the character read.</p>
 <p>Stack of Fragments built into full NFA</p>
 </section>
   </div>
-  <div class="slide hidden " id="slide-8">
+  <div class="slide hidden 
+" id="slide-8">
     <section class="slide-content"><h3 id="postfix-notation-nfa">Postfix Notation → NFA</h3>
 <h2 id="data-structures">Data structures</h2>
 <p>State</p>
@@ -466,7 +474,8 @@ pre .chunk {
 <span class="keyword">type</span> OutList []**State</code></pre>
 </section>
   </div>
-  <div class="slide hidden " id="slide-9">
+  <div class="slide hidden 
+" id="slide-9">
     <section class="slide-content"><h3 id="postfix-notation-nfa">Postfix Notation → NFA</h3>
 <h2 id="literal-characters">Literal characters</h2>
 <pre><code class="lang-go"><span class="keyword">default</span>:
@@ -486,7 +495,8 @@ pre .chunk {
     stack.push(Frag{s, <span class="built_in">append</span>(frag1.out, frag2.out...)})</code></pre>
 </section>
   </div>
-  <div class="slide hidden " id="slide-10">
+  <div class="slide hidden 
+" id="slide-10">
     <section class="slide-content"><h3 id="postfix-notation-nfa">Postfix Notation → NFA</h3>
 <h2 id="zero-or-one">Zero or one</h2>
 <pre><code class="lang-go"><span class="keyword">case</span> <span class="string">'?'</span>:
@@ -507,7 +517,8 @@ pre .chunk {
     stack.push(Frag{frag1.start, oneOut(&amp;s.out1)})</code></pre>
 </section>
   </div>
-  <div class="slide hidden " id="slide-11">
+  <div class="slide hidden 
+" id="slide-11">
     <section class="slide-content"><h3 id="simulate-nfa">Simulate NFA</h3>
 <p>Keep two lists of states: states currently in, and states that will be transitioned to in the next step of execution.</p>
 <ol>
@@ -522,12 +533,14 @@ pre .chunk {
 </ol>
 </section>
   </div>
-  <div class="slide hidden " id="slide-12">
+  <div class="slide hidden 
+" id="slide-12">
     <section class="slide-content"><h3 id="demo-">Demo!</h3>
-<p><a href="https://play.golang.org/p/JMkw-zeCYI">https://play.golang.org/p/JMkw-zeCYI</a></p>
+<p><a href="https://play.golang.org/p/JMkw-zeCYI">https://play.golang.org/p/9K6ix3S7M_</a></p>
 </section>
   </div>
-  <div class="slide hidden " id="slide-13">
+  <div class="slide hidden 
+" id="slide-13">
     <section class="slide-content"><h1 id="questions-">Questions?</h1>
 </section>
   </div>
