@@ -45,6 +45,12 @@ func (fs *Fstack) pop() (f Frag) {
 //
 // TODO: Make {n} work with () groups
 func preProcess(s string) (string, error) {
+	
+	// For now
+	if s == "" {
+		return s, errors.New("Empty string not supported")
+	}
+	
 	for {
 		// Current block to modify
 		openIdx := strings.Index(s, "{")
